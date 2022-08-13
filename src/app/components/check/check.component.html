@@ -1,11 +1,62 @@
 <form class="formGroupCheck">
     <label for="Password">Password</label>
     <div class="input-group">
-      <input type="text" id="password" type="{{ show ? 'text' : 'password' }}">
+      <input type="text" id="password" type="{{ show ? 'text' : 'password' }}" (keyup)="checkStrength($event)">
       <img class="eye" [ngClass]="{'eye-closed': show === true}" (click)="showPass()" src="../../../assets/img/eye.svg" alt="">
       <img class="eye" [ngClass]="{'eye-closed': show === false}" (click)="showPass()"src="../../../assets/img/eye-slash.svg" alt="">
+      <small>Enter the secret password</small>
+
+<!-- validação -->
+
+
+<div id="popover-password">
+  <p><span id="result"></span></p>
+  <div class="progress">
+    <div id="password-strength" class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0"
+      aria-valuemax="100" style="width:0%">
     </div>
-    <small>Enter the secret password</small>
+  </div>
+  <ul class="list-unstyled">
+    <li class="">
+      <span class="low-upper-case">
+        <i [ngClass]="{'fa-circle': !lowUpperCase, 'fa-check':lowUpperCase}" aria-hidden="true"></i>
+        &nbsp;Lowercase &amp; Uppercase
+      </span>
+    </li>
+    <li class="">
+      <span class="one-number">
+        <i [ngClass]="{'fa-circle': !number, 'fa-check':number}" aria-hidden="true"></i>
+        &nbsp;Number (0-9)
+      </span>
+    </li>
+    <li class="">
+      <span class="one-special-char">
+        <i [ngClass]="{'fa-circle': !specialChar, 'fa-check':specialChar}" aria-hidden="true"></i>
+        &nbsp;Special Character (!@#$%^&amp;*)
+      </span>
+    </li>
+    <li class="">
+      <span class="eight-character">
+        <i [ngClass]="{'fa-circle': !eightChar, 'fa-check':eightChar}" aria-hidden="true"></i>
+        &nbsp;Atleast 8 Character
+      </span>
+    </li>
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- validação -->
+
+
+
+    </div>
     <div class="button-container">
         <a class="button" target="_blank">Check password</a>
     </div> 
