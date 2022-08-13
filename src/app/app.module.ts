@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SuccessComponent } from './components/success/success.component';
 import { FailComponent } from './components/fail/fail.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import { FailComponent } from './components/fail/fail.component';
     AppComponent,
     SuccessComponent,
     FailComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
