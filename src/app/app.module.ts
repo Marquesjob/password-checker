@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
+
 import { AppComponent } from './app.component';
 import { SuccessComponent } from './components/success/success.component';
 import { FailComponent } from './components/fail/fail.component';
-import { CheckComponent } from './components/check/check.component';
+import { CheckPasswordComponent } from './components/checkPassword/checkPassword.component';
+import { AuthService } from './components/checkPassword/auth.service';
 
 
 @NgModule({
@@ -13,13 +15,15 @@ import { CheckComponent } from './components/check/check.component';
     AppComponent,
     SuccessComponent,
     FailComponent,
-    CheckComponent,
+    CheckPasswordComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

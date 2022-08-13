@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { TesteModel } from './teste.model';
+import { AuthService } from './auth.service';
+import { Password } from './password';
 
 @Component({
-  selector: 'app-check',
-  templateUrl: './check.component.html',
-  styleUrls: ['./check.component.scss']
+  selector: 'app-check-password',
+  templateUrl: './checkPassword.component.html',
+  styleUrls: ['./checkPassword.component.scss']
 })
-export class CheckComponent implements OnInit {
+
+export class CheckPasswordComponent implements OnInit {
   show: boolean = false;
   lowUpperCase: boolean = false;
   number: boolean = false;
@@ -15,21 +17,20 @@ export class CheckComponent implements OnInit {
   passwordStrength: boolean = false;
   testano:any;
 
-  constructor() { }
+  public password: Password = new Password();
 
-  ngOnInit(): void {
+
+  constructor(private authService: AuthService) { }
+
+  ngOnInit() {
   }
 
   showPass() {
-    let result = document.getElementById("result");
     this.show = !this.show;
-    this.testano = new TesteModel({
-      name: 'name',
-      pass: 'senha',
-      tipo: 0
-    });
-    console.log(this.testano);
-    
+  }
+
+  checkPass() {
+    console.log(this.password.key)
   }
 
   checkStrength(e: KeyboardEvent) {
@@ -101,4 +102,5 @@ export class CheckComponent implements OnInit {
       // passwordStrength.style = 'width: 100%';
     }
   }
+
 }
