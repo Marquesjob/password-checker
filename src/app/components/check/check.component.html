@@ -1,6 +1,10 @@
 <form class="formGroupCheck">
     <label for="Password">Password</label>
-    <input type="text" id="password" type="password">
+    <div class="input-group">
+      <input type="text" id="password" type="{{ show ? 'text' : 'password' }}">
+      <img class="eye" [ngClass]="{'eye-closed': show === true}" (click)="showPass()" src="../../../assets/img/eye.svg" alt="">
+      <img class="eye" [ngClass]="{'eye-closed': show === false}" (click)="showPass()"src="../../../assets/img/eye-slash.svg" alt="">
+    </div>
     <small>Enter the secret password</small>
     <div class="button-container">
         <a class="button" target="_blank">Check password</a>

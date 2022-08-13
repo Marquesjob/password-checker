@@ -25,4 +25,17 @@
         small {
             color: rgb(189, 189, 189);
         }
+
+        .input-group {
+          box-sizing: border-box;
+        }
+
+        .eye {
+          width: 16px;
+          cursor: pointer;
+          &.eye-closed {
+            display: none;
+          }
+        }
     }
+
