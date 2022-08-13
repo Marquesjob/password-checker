@@ -6,6 +6,7 @@ import { SuccessComponent } from './components/success/success.component';
 
 
 const routes: Routes = [
+  { path: '', pathMatch: 'full', redirectTo: 'check'},
   { path: 'check', component: CheckComponent },
   { path: 'success', component: SuccessComponent },
   { path: 'fail', component: FailComponent }
