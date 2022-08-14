@@ -10,21 +10,20 @@ import { Password } from './password';
 
 export class CheckPasswordComponent implements OnInit {
 
-  public password: Password = new Password();
+  password: Password = new Password();
 
   show: boolean = false;
 
   constructor(private authService: AuthService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   showPass() {
-    this.show = !this.show;
+    this.show = !this.show; // Altera o valor inicial para ser diferente dele mesmo.(bolean)
   }
 
-  checkPass() {
-    console.log(this.password.key)
+  checkPass() { 
+    this.authService.check(this.password); // Verifica a senha digitada pelo o usuário.
   }
-
+  
 }

@@ -1,38 +1,21 @@
 import { Router } from '@angular/router';
-import { Injectable, EventEmitter } from '@angular/core';
-
+import { Injectable } from '@angular/core';
 
 import { Password } from './password'
 
 
 @Injectable()
+
 export class AuthService {
-
-  private checked: boolean = false;
-
-  // mostrarMenuEmitter = new EventEmitter<boolean>();
 
   constructor(private router: Router) { }
 
-  auth(password: Password){
-
-    if (password.key == '123') {
-
-      this.checked = true;
-
-      // this.mostrarMenuEmitter.emit(true);
-
-      this.router.navigate(['/']);
-
+  check(password: Password) { // recebo a senha digitada
+    if (password.key == '123') { // verifico
+      this.router.navigate(['/success']); // redireciono caso for correspondente
     } else {
-      this.checked = false;
-
-      // this.mostrarMenuEmitter.emit(false);
+      this.router.navigate(['/fail']); // redireciono caso for diferente
     }
   }
-
-  isChecked(){
-    return this.checked;
-  }
-
+  
 }
