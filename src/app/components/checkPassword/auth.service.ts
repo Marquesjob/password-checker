@@ -8,14 +8,31 @@ import { Password } from './password'
 
 export class AuthService {
 
+  private authenticationStatus: boolean = false;
+  private key: any = '123'
+
   constructor(private router: Router) { }
 
-  check(password: Password) { // recebo a senha digitada
-    if (password.key == '123') { // verifico
-      this.router.navigate(['/success']); // redireciono caso for correspondente
+  check(password: Password) {
+
+    if (password.key == null) {
+        this.authenticationStatus = false;
+        window.alert('Este campo não pode ficar vazio')
+        return;
     } else {
-      this.router.navigate(['/fail']); // redireciono caso for diferente
+      if (password.key == this.key) {
+        this.authenticationStatus = true;
+        this.router.navigate(['/success']); // redireciono caso for correspondente
+      } else {
+        this.authenticationStatus = true;
+        this.router.navigate(['/fail']); // redireciono caso for diferente
+      }
     }
   }
-  
+
+  checkAuth() {
+    return this.authenticationStatus;
+  }
+
 }
+  

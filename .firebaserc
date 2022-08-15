@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "thepasswordchecker": {
+      "hosting": {
+        "password-checker": [
+          "thepasswordchecker"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "thepasswordchecker"
+  }
+}

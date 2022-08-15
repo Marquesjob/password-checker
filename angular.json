@@ -103,6 +103,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "password-checker:build:production",
+            "firebaseProject": "thepasswordchecker",
+            "firebaseHostingSite": "thepasswordchecker"
+          }
         }
       }
     }
