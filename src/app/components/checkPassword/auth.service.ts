@@ -18,6 +18,9 @@ export class AuthService {
     ) { }
 
   check(password: Password) {
+    
+    this.service.getPassword()
+    .subscribe( x => getPassword().passowrds = this.key);
 
     if (password.key == null) {
         this.authenticationStatus = false;
