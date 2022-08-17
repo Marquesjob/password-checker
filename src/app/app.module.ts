@@ -8,6 +8,7 @@ import { SuccessComponent } from './components/success/success.component';
 import { FailComponent } from './components/fail/fail.component';
 import { CheckPasswordComponent } from './components/checkPassword/checkPassword.component';
 import { AuthService } from './components/checkPassword/auth.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { AuthService } from './components/checkPassword/auth.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
