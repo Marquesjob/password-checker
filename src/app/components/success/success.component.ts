@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Message } from './message'
+import { SuccessService } from './success.service';
 
 @Component({
   selector: 'app-success',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SuccessComponent implements OnInit {
 
-  constructor() { }
+  messages: Message[];
+
+  constructor(private service: SuccessService) { }
 
   ngOnInit(): void {
+
+    this.service.messages()
+      .subscribe(res => this.messages = res)
+  
   }
 
 }

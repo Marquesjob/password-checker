@@ -1,7 +1,8 @@
 {
-    "passwords": [
+    "messages": [
         {
-            "key": "123"
+            "successmessage": "Parabéns a senha está correta!",
+            "smallmessage": "Volte e teste mais possibilidades!"
         }
     ]
 }

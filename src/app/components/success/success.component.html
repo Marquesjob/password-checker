@@ -1,9 +1,9 @@
 
-<form class="formGroupSuccess">
-    <p>A senha está correta!</p>
-    <small>Volte e teste mais possibilidades!</small>
+<div *ngFor="let message of messages" class="formGroupSuccess">
+    <p>{{ message.successmessage }}</p>
+    <small>{{ message.smallmessage }}</small>
     <div class="button-container">
         <a class="button" routerLink="/checkpassword">Voltar</a>
     </div> 
-</form>
+</div>
 

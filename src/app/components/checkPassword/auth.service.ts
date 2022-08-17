@@ -2,7 +2,6 @@ import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 
 import { Password } from './password'
-import { CheckPasswordService } from './checkPassword.service';
 
 
 @Injectable()
@@ -10,17 +9,11 @@ import { CheckPasswordService } from './checkPassword.service';
 export class AuthService {
 
   private authenticationStatus: boolean = false;
-  key: string = '123'
+  private key: string = '123';
 
-  constructor(
-    private router: Router,
-    private service: CheckPasswordService
-    ) { }
+  constructor(private router: Router) { }
 
   check(password: Password) {
-    
-    this.service.getPassword()
-    .subscribe( x => getPassword().passowrds = this.key);
 
     if (password.key == null) {
         this.authenticationStatus = false;
