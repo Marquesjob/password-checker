@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.7.
 
+# Description 
+
+Small project developed with Angular, which simulates a service that checks if passwords typed by the user correspond to internally registered passwords.
+
 # Template
 
 ![Demonstração / Pagina inicial](./src/assets/img/feng.png)
